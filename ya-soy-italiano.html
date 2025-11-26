@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ya soy Italiano - Información y Trámites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="progress-container">
+        <div class="progress-bar" id="miBarra"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="complementos/Banderaredonda.png" alt="Bandera Italiana">
+                <span>Ciudadanía Italiana</span>
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quiero-ser-italiano.html">Quiero ser italiano</a></li>
+                <li><a href="ya-soy-italiano.html">Ya soy italiano</a></li>
+            </ul>  
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="section">
+            <h1>Información para Italianos</h1>
+            <span class="subtitulo">Derechos y obligaciones viviendo en el exterior</span>
+            
+            <div class="contenedor-img-texto">
+                <div class="caja-violeta">
+                     <p>En esta página encontrarás información desarrollada sobre cada uno de estos temas fundamentales:</p>
+                        <ol>
+                            <li><a href="#aire">Registro A.I.R.E.</a></li>
+                            <li><a href="#pasaporte">Pasaporte Italiano</a></li>
+                            <li><a href="#cie">Carta de Identidad (CIE)</a></li>
+                        </ol>
+                </div>
+                <img src="complementos/europa.png" alt="Control de Frontera Europa">
+            </div>
+        </section>
+
+        <section class="section" id="aire">
+            <h2>Registro A.I.R.E.</h2>
+            <span class="subtitulo">Anagrafe degli Italiani Residenti all'Estero</span>
+            
+            <div class="contenedor-img-texto invertido">
+                <div class="caja-violeta">
+                    <p>Es el registro obligatorio para todos los ciudadanos que viven fuera de Italia más de 12 meses. Es necesario para realizar cualquier trámite consular.</p>
+                    <ul>
+                        <li>Permite al Estado saber dónde vives.</li>
+                        <li>Es necesario para renovar pasaporte y votar.</li>
+                        <li>Se actualiza a través del portal <strong>Fast It</strong>.</li>
+                    </ul>
+                    <br>
+                    <p>
+                        <a href="https://serviziconsolari.esteri.it/ScoFE/index.sco" target="_blank">
+                            Ingresar al Portal Fast It
+                        </a>
+                    </p>
+                </div>
+                <a href="https://serviziconsolari.esteri.it/ScoFE/index.sco" target="_blank">
+                    <img src="complementos/fastit.png" alt="Logo Fast It" style="width: 350px;">
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="pasaporte">
+            <h2>Pasaporte</h2>
+            <span class="subtitulo">Tu documento de viaje internacional</span>
+
+            <div class="contenedor-vertical">
+                <div class="caja-violeta" style="width: 100%;">
+                    <p>Es el documento de viaje y de identidad. Tiene validez de 10 años para mayores de 18, y de 3 a 5 años para menores.</p>
+                    <ul>
+                        <li><strong>Viajar:</strong> Ingreso a países sin visa (ej. USA con ESTA).</li>
+                        <li><strong>Residir:</strong> Derecho a vivir y trabajar en la Unión Europea.</li>
+                        <li><strong>Solicitud:</strong> Se tramita en el Consulado que te corresponde por domicilio (vía Prenotami).</li>
+                    </ul>
+                </div>
+                
+                <div class="galeria-imagenes">
+                    <img src="complementos/pasaporteuno.png" alt="Pasaporte en mano">
+                    <img src="complementos/pasaportedos.png" alt="Dos pasaportes">
+                    <img src="complementos/pasaportetres.png" alt="Tres pasaportes">
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="cie">
+            <h2>Carta de Identidad Electrónica</h2>
+            <span class="subtitulo">Identidad digital y física</span>
+
+            <div class="contenedor-img-texto invertido">
+                <div class="caja-violeta">
+                    <p>Conocida como CIE, sirve para identificarse dentro de la Unión Europea y realizar trámites online (SPID).</p>
+                    <ul>
+                        <li>Documento tamaño tarjeta de crédito con chip.</li>
+                        <li>Válida para viajar dentro de la UE.</li>
+                        <li>En el exterior se solicita en el Consulado.</li>
+                        <li>En Italia se gestiona en la Comune.</li>
+                    </ul>
+                </div>
+                <img src="complementos/cie.png" alt="Iconos CIE y Huella" style="width: 300px;">
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p style="text-align: center; padding: 20px;">
+            <a href="https://www.linkedin.com/in/santiago-ghirardi/" target="_blank" rel="noopener noreferrer" class="link-footer">
+                Desarrollado por Santiago Ghirardi
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('visible'); 
+                }
+            });
+        }, {
+            threshold: 0.3 
+        });
+
+        document.querySelectorAll('.section').forEach(seccion => {
+            observador.observe(seccion);
+        });
+
+        window.addEventListener('scroll', function() {
+            var desplazamiento = document.body.scrollTop || document.documentElement.scrollTop;
+            var alturaTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var porcentaje = (desplazamiento / alturaTotal) * 100;
+            document.getElementById("miBarra").style.width = porcentaje + "%";
+        });
+    </script>
+</body>
+</html>
